@@ -3,7 +3,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jieun's Portfolio</title>
+    <title>Jieun Kang</title>
     <meta name="description" content="Portfolio for software engineer Jieun" />
     <meta name="authour" content="Jieun" />
     <link rel="icon" type="image/png" href="imgs/favicon.png" />
@@ -23,19 +23,159 @@
     <!-- Navbar -->
     <nav id="navbar">
       <div class="navbar__logo">
+        <img src="imgs/favicon.png" alt="Icon" />
         <a href="">Jieun</a>
       </div>
-      <div class="navbar__menu"></div>
+      <ul class="navbar">
+        <li class="navbar__menu__item">Home</li>
+        <li class="navbar__menu__item">About</li>
+        <li class="navbar__menu__item">Skills</li>
+        <li class="navbar__menu__item">Experience</li>
+        <li class="navbar__menu__item">Projects</li>
+        <li class="navbar__menu__item">Contact</li>
+      </ul>
     </nav>
+    <!-- Home -->
+    <section id="home">
+      <img
+        src="imgs/profile.png"
+        alt="Jieun's profile photo"
+        class="home__avatar"
+      />
+      <h1 class="home__title">Jieun Kang</h1>
+      <h2 class="home__description">A Software Engineer in Portland, OR</h2>
+      <button class="home__contact">Contact Me</button>
+    </section>
     <!-- About Me -->
-    <section id="about"></section>
+    <section id="about">
+      <h1 class="about__title">ABOUT ME</h1>
+      <h5 class="about__description">
+        Experience with all phases of the software life-cycle. Passion for
+        learning new technologies. Capable of working within a team environment
+        and independently. Ability to plan and time schedule, work under strict
+        time pressure0 and adapt quickly when needed.
+      </h5>
+    </section>
     <!-- Skills -->
-    <section id="skills"></section>
+    <section id="skills">
+      <h1 class="skill__title">SKILLS</h1>
+      <div class="skills">
+        <div class="skill">
+          <div class="skill__icon">
+            <img
+              src="imgs/icons/file-code-solid.png"
+              alt="Front-end icon"
+              class="skill__logo"
+            />
+          </div>
+          <h3 class="skill__title">Front-end</h3>
+          <ui class="skill__items">
+            <li class="skill__item">TypeScript</li>
+            <li class="skill__item">JavaScript</li>
+            <li class="skill__item">React JS</li>
+            <li class="skill__item">Web APIs</li>
+          </ui>
+        </div>
+        <div class="skill">
+          <div class="skill__icon">
+            <img
+              src="imgs/icons/mobile-solid.png"
+              alt="Mobile-end icon"
+              class="skill__logo"
+            />
+          </div>
+          <h3 class="skill__title">Mobile</h3>
+          <ui class="skill__items">
+            <li class="skill__item">React Native</li>
+            <li class="skill__item">Expo</li>
+          </ui>
+        </div>
+        <div class="skill">
+          <div class="skill__icon">
+            <img
+              src="imgs/icons/server-solid.png"
+              alt="Back-end icon"
+              class="skill__logo"
+            />
+          </div>
+          <h3 class="skill__title">Back-end</h3>
+          <ui class="skill__items">
+            <li class="skill__item">NodeJs</li>
+            <li class="skill__item">Rest APIs</li>
+            <li class="skill__item">MySQL</li>
+            <li class="skill__item">Firebase</li>
+            <li class="skill__item">DynamoDB</li>
+            <li class="skill__item">AWS Lambda</li>
+            <li class="skill__item">Serverless</li>
+          </ui>
+        </div>
+      </div>
+    </section>
+    <!-- Experience -->
+    <section id="experience">
+      <h1 class="experience__title">EXPERIENCE</h1>
+      <div class="experience"></div>
+    </section>
     <!-- Projects -->
-    <section id="projects"></section>
-    <!-- Testimonials -->
-    <section id="testimonials"></section>
+    <section id="projects">
+      <h1 class="project__title">PROJECTS</h1>
+      <div class="project__categories">
+        <button class="category__btn">
+          All
+          <span class="category__count">6</span>
+        </button>
+        <button class="category__btn">
+          Front-end
+          <span class="category__count">2</span>
+        </button>
+        <button class="category__btn">
+          Back-end
+          <span class="category__count">2</span>
+        </button>
+        <button class="category__btn">
+          Mobile
+          <span class="category__count">2</span>
+        </button>
+      </div>
+      <div class="projects">
+        <a
+          href="https://github.com/jieunkang-101/koviseries"
+          class="project"
+          target="blank"
+        >
+          <img
+            src="imgs/projects/koviseries.png"
+            alt="koviseries"
+            class="project=img"
+          />
+          <div class="project__description">
+            <h3>koviseries</h3>
+            <span>A mobile application with React Native and Expo</span>
+          </div>
+        </a>
+      </div>
+    </section>
     <!-- Contact -->
-    <section id="contact"></section>
+    <section id="contact">
+      <h1 class="contact__title">Let's talk</h1>
+      <h2 class="contact__email">jieunkang.dev@gmail.com</h2>
+      <div class="contact__links">
+        <a href="https://github.com/jieunkang-101" target="blank">
+          <img
+            src="imgs/icons/github-brands.png"
+            alt="GitHub icon"
+            class="contact__icon"
+          />
+        </a>
+        <a href="https://www.linkedin.com/in/jieunkang-dev/" target="blank">
+          <img
+            src="imgs/icons/linkedin-in-brands.png"
+            alt="Linkedin icon"
+            class="contact__icon"
+          />
+        </a>
+      </div>
+      <p class="contact__rights">&copy; 2021 Jieun Kang</p>
+    </section>
   </body>
 </html>
