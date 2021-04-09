@@ -6,7 +6,7 @@
     <title>Jieun Kang</title>
     <meta name="description" content="Portfolio for software engineer Jieun" />
     <meta name="authour" content="Jieun" />
-    <link rel="icon" type="image/png" href="imgs/favicon.png" />
+    <link rel="icon" type="image/png" href="imgs/logo.png" />
     <script
       defer
       src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
@@ -17,17 +17,19 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="styles.css" />
     <script src="main.js" defer></script>
   </head>
   <body>
     <!-- Navbar -->
     <nav id="navbar">
       <div class="navbar__logo">
-        <img src="imgs/favicon.png" alt="Icon" />
-        <a href="">Jieun</a>
+        <a href="">
+          <img src="imgs/logo.png" alt="Icon" />
+        </a>
       </div>
-      <ul class="navbar">
-        <li class="navbar__menu__item">Home</li>
+      <ul class="navbar__menu">
+        <li class="navbar__menu__item active">Home</li>
         <li class="navbar__menu__item">About</li>
         <li class="navbar__menu__item">Skills</li>
         <li class="navbar__menu__item">Experience</li>
@@ -38,13 +40,10 @@
     <!-- Home -->
     <section id="home">
       <img
-        src="imgs/profile.png"
-        alt="Jieun's profile photo"
-        class="home__avatar"
+        src="imgs/background.png"
+        alt="Home background"
+        class="home__background"
       />
-      <h1 class="home__title">Jieun Kang</h1>
-      <h2 class="home__description">A Software Engineer in Portland, OR</h2>
-      <button class="home__contact">Contact Me</button>
     </section>
     <!-- About Me -->
     <section id="about">
