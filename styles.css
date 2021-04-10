@@ -6,13 +6,12 @@
   --color-dark-white: #e9edf2;
   --color-pink: #f8ddca;
   --color-dark-pink: #c78e81;
+  --color-grey-pink: #dbb9b2;
   --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
   --color-light-grey: #d6c5c5;
   --color-grey-blue: #204a5c;
   --color-blue: #73aace;
-  --color-yellow: #fff7d1;
-  --color-orange: #feb546;
   --color-black: #000000;
 
   /* Font size */
@@ -158,14 +157,10 @@ p {
 }
 
 /* Skills */
-.skills {
+.skills__container {
   display: flex;
   justify-content: space-between;
 }
-
-/* .skill  {
-  display: flex;
-} */
 
 .skill__icon {
   display: flex;
@@ -199,7 +194,7 @@ p {
 
 /* Experience */
 #experience {
-  background-color: var(--color-grey-blue);
+  background-color: var(--color-pink);
 }
 
 .experience__title {
@@ -207,15 +202,34 @@ p {
 }
 
 /* Contact */
+#contact {
+  background-color: var(--color-dark-pink);
+}
+
+#contact__links {
+  display: flex;
+  justify-content: center;
+}
+
+.contact__icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 20px; */
+}
+
 .contact__icon i {
-  font-size: 40px;
+  font-size: 30px;
   color: var(--color-dark-white);
 }
 
- {
-}
-
- {
+#contact__title,
+#contact__email,
+#contact__rights {
+  color: var(--color-dark-white);
+  margin-top: 20px;
 }
 
  {
