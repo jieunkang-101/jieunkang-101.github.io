@@ -8,7 +8,7 @@
   --color-dark-pink: #c78e81;
   --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
-  --color-light-grey: #7c7979;
+  --color-light-grey: #d6c5c5;
   --color-grey-blue: #204a5c;
   --color-blue: #73aace;
   --color-yellow: #fff7d1;
@@ -29,6 +29,9 @@
 
   /* Size */
   --size-border-radius: 4px;
+
+  /* Animatin */
+  --animation-duration: 300ms;
 }
 
 /* Universal tags */
@@ -52,6 +55,11 @@ ul {
   padding-left: 0;
 }
 
+li {
+  line-height: 30px;
+  font-weight: var(--weight-semi-bold);
+}
+
 /* Typography */
 h1 {
   font-size: var(--font-large);
@@ -72,6 +80,7 @@ h3 {
   font-weight: var(--weight-regular);
   color: var(--color-black);
   margin: 8px 0;
+  line-height: 30px;
 }
 
 p {
@@ -81,6 +90,18 @@ p {
   margin: 4px 0;
 }
 
+/* Section common */
+.section {
+  padding: 50px;
+  text-align: center;
+  margin: auto;
+}
+
+.section__container {
+  max-width: 1200px;
+}
+
+/* Navbar */
 #navbar {
   display: flex;
   justify-content: space-between;
@@ -110,10 +131,18 @@ p {
   background-color: var(--color-dark-pink);
 }
 
+/* Home */
 #home {
   background: url('imgs/background.png') center/cover no-repeat;
   height: 400px;
+  /* max-width: 1200px; */
   /* need update */
+}
+
+/* About */
+.about__content {
+  display: flex;
+  justify-content: center;
 }
 
 .about__avatar {
@@ -121,7 +150,75 @@ p {
   height: 250px;
   border-radius: 50%;
   border: 2px solid var(--color-pink);
-  /* float: left; */
+  margin: 20px 60px;
+}
+
+.about__description {
+  align-self: center;
+}
+
+/* Skills */
+.skills {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .skill  {
+  display: flex;
+} */
+
+.skill__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  font-size: 70px;
+  color: var(--color-dark-pink);
+  border: 1px solid var(--color-pink);
+  border-radius: 50%;
+  margin: 20px 0 20px 0;
+}
+
+.skill__icon i {
+  transition: all var(--animation-duration) ease;
+}
+
+.skill__icon:hover i {
+  color: var(--color-light-grey);
+  transform: rotate(-15deg) scale(1.2);
+}
+
+.skill__title {
+  font-weight: var(--weight-semi-bold);
+}
+
+.skill__items {
+  color: var(--color-grey);
+}
+
+/* Experience */
+#experience {
+  background-color: var(--color-grey-blue);
+}
+
+.experience__title {
+  color: var(--color-dark-white);
+}
+
+/* Contact */
+.contact__icon i {
+  font-size: 40px;
+  color: var(--color-dark-white);
+}
+
+ {
+}
+
+ {
+}
+
+ {
 }
 
  {
