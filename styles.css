@@ -13,6 +13,7 @@
   --color-grey-blue: #204a5c;
   --color-blue: #73aace;
   --color-black: #000000;
+  --color-yellow: #fff7d1;
 
   /* Font size */
   --font-large: 48px;
@@ -51,12 +52,19 @@ a {
 
 ul {
   list-style: none;
-  padding-left: 0;
+  /* padding-left: 0; */
 }
 
 li {
   line-height: 30px;
   font-weight: var(--weight-semi-bold);
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
 
 /* Typography */
@@ -138,9 +146,13 @@ p {
 /* Home */
 #home {
   background: url('imgs/background.png') center/cover no-repeat;
-  height: 400px;
+  /* height: 400px; */
   /* max-width: 1200px; */
   /* need update */
+}
+
+.home {
+  padding: 20%;
 }
 
 /* About */
@@ -162,10 +174,16 @@ p {
 }
 
 /* Skills */
-.skills__container {
+#skills__container {
   display: flex;
   justify-content: space-between;
   margin: 0 80px;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .skill__icon {
@@ -179,6 +197,10 @@ p {
   border: 1px solid var(--color-pink);
   border-radius: 50%;
   margin: 20px 0 20px 0;
+}
+
+.skill__items {
+  padding: 0;
 }
 
 .skill__icon i {
@@ -201,6 +223,7 @@ p {
 /* Experience */
 #experiences {
   background-color: var(--color-dark-white);
+  margin: 40px 0;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -250,6 +273,10 @@ p {
 }
 
 /* Projects */
+#projects {
+  margin: 40px 0;
+}
+
 .project__categories {
   margin: 40px;
 }
@@ -356,6 +383,7 @@ p {
 #testimonials {
   background-color: var(--color-pink);
   padding: 30px;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -393,6 +421,12 @@ p {
 #contact__links {
   display: flex;
   justify-content: center;
+  transition: all var(--animation-duration) ease-in;
+}
+
+#contact__links i:hover {
+  transform: scale(1.2);
+  color: var(--color-grey-blue);
 }
 
 .contact__icon {
@@ -413,4 +447,50 @@ p {
 #contact__rights {
   color: var(--color-dark-white);
   margin-top: 20px;
+}
+
+/* For below 768px screen width */
+@media screen and (max-width: 768px) {
+  .navbar__toggle-btn {
+    display: block;
+  }
+
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .about__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about__avatar {
+    width: 180px;
+    height: 180px;
+  }
+
+  #skills__container {
+    flex-direction: column;
+  }
+
+  .skill {
+    margin-bottom: 38px;
+  }
+
+  .skillset {
+    flex-direction: column;
+  }
+
+  .project {
+    flex-grow: 1;
+  }
 }

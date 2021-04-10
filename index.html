@@ -34,9 +34,15 @@
         <li class="navbar__menu__item">Projects</li>
         <li class="navbar__menu__item">Contact</li>
       </ul>
+      <!-- Toggle button -->
+      <button class="navbar__toggle-btn">
+        <i class="fas fa-bars"></i>
+      </button>
     </nav>
     <!-- Home -->
-    <section id="home"></section>
+    <section id="home">
+      <div class="home"></div>
+    </section>
     <!-- About Me -->
     <section id="about" class="section section__container">
       <h1 id="about__title">About Me</h1>
@@ -54,7 +60,7 @@
     <!-- Skills -->
     <section id="skills" class="section section__container">
       <h1 id="skill__title">Skills</h1>
-      <div class="skills__container">
+      <div id="skills__container">
         <div class="skill">
           <div class="skill__icon">
             <i class="fas fa-file-code"></i>
@@ -151,62 +157,64 @@
     </section>
     <!-- Projects -->
     <section id="projects" class="section">
-      <h1 id="project__title">Projects</h1>
-      <div class="project__categories">
-        <button class="category__btn active">
-          All
-          <span class="category__count">6</span>
-        </button>
-        <button class="category__btn">
-          Front-end
-          <span class="category__count">2</span>
-        </button>
-        <button class="category__btn">
-          Back-end
-          <span class="category__count">2</span>
-        </button>
-        <button class="category__btn">
-          Mobile
-          <span class="category__count">2</span>
-        </button>
-      </div>
-      <div class="projects">
-        <a
-          href="https://github.com/jieunkang-101/koviseries"
-          class="project"
-          target="blank"
-        >
-          <img
-            src="imgs/projects/koviseries.png"
-            alt="koviseries"
-            class="project__img"
-          />
-          <div class="project__description">
-            <h3>koviseries</h3>
-            <span>A mobile application with React Native and Expo</span>
-          </div>
-        </a>
-        <a href="" class="project" target="blank">
-          <img src="" alt="" class="project__img" />
-          <div class="project__description">
-            <h3>title</h3>
-            <span>description</span>
-          </div>
-        </a>
-        <a href="" class="project" target="blank">
-          <img src="" alt="" class="project__img" />
-          <div class="project__description">
-            <h3>title</h3>
-            <span>description</span>
-          </div>
-        </a>
-        <a href="" class="project" target="blank">
-          <img src="" alt="" class="project__img" />
-          <div class="project__description">
-            <h3>title</h3>
-            <span>description</span>
-          </div>
-        </a>
+      <div class="section__container">
+        <h1 id="project__title">Projects</h1>
+        <div class="project__categories">
+          <button class="category__btn active">
+            All
+            <span class="category__count">6</span>
+          </button>
+          <button class="category__btn">
+            Front-end
+            <span class="category__count">2</span>
+          </button>
+          <button class="category__btn">
+            Back-end
+            <span class="category__count">2</span>
+          </button>
+          <button class="category__btn">
+            Mobile
+            <span class="category__count">2</span>
+          </button>
+        </div>
+        <div class="projects">
+          <a
+            href="https://github.com/jieunkang-101/koviseries"
+            class="project"
+            target="blank"
+          >
+            <img
+              src="imgs/projects/koviseries.png"
+              alt="koviseries"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>koviseries</h3>
+              <span>A mobile application with React Native and Expo</span>
+            </div>
+          </a>
+          <a href="" class="project" target="blank">
+            <img src="" alt="" class="project__img" />
+            <div class="project__description">
+              <h3>title</h3>
+              <span>description</span>
+            </div>
+          </a>
+          <a href="" class="project" target="blank">
+            <img src="" alt="" class="project__img" />
+            <div class="project__description">
+              <h3>title</h3>
+              <span>description</span>
+            </div>
+          </a>
+          <a href="" class="project" target="blank">
+            <img src="" alt="" class="project__img" />
+            <div class="project__description">
+              <h3>title</h3>
+              <span>description</span>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
     <!-- Testimonials -->
