@@ -19,9 +19,8 @@ navbarMenu.addEventListener('click', (event) => {
   if (link == null) {
     return;
   }
-  const scrollTo = document.querySelector(link);
-  scrollTo.scrollIntoView({behavior: "smooth"});
   navbarMenu.classList.remove('open');
+  scrollIntoView(link);
 });
 
 // Navbar toggle button for small screen
@@ -29,3 +28,14 @@ const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
 navbarToggleBtn.addEventListener('click', () => {
   navbarMenu.classList.toggle('open');
 });
+
+// Handle click on "contact me" button on home
+const homeContactBtn = document.querySelector('.contact__btn');
+homeContactBtn.addEventListener('click', () => {
+  scrollIntoView('#contact');
+});
+
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: 'smooth' });
+}

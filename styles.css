@@ -188,6 +188,24 @@ p {
   align-self: center;
 }
 
+.contact__btn {
+  border: 1px solid var(--color-pink);
+  border-radius: var(--size-border-radius);
+  font-size: var(--font-regular);
+  padding: 8px 24px;
+  margin-top: 24px;
+  background-color: var(--color-dark-pink);
+  color: var(--color-dark-white);
+  transition: all var(--animation-duration) ease-in;
+}
+
+.contact__btn:hover {
+  transform: scale(1.1);
+  color: var(--color-grey);
+  border: 2px solid var(--color-pink);
+  background-color: transparent;
+}
+
 /* Skills */
 #skills__container {
   display: flex;
@@ -472,7 +490,7 @@ p {
   #navbar {
     flex-direction: column;
     align-items: flex-start;
-    background-color: var(--color-grey-blue);
+    padding: 0;
   }
 
   #navbar.navbar--dark {
@@ -485,6 +503,7 @@ p {
     width: 100%;
     padding: 0;
     display: none;
+    background-color: var(--color-grey-blue);
   }
 
   .navbar__menu.open {
