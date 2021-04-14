@@ -264,7 +264,7 @@ p {
 .experience {
   background-color: var(--color-grey-pink);
   display: flex;
-  margin: 40px 0;
+  margin: 24px 16px;
   border-radius: var(--size-border-radius);
 }
 
@@ -295,12 +295,19 @@ p {
   text-align: center;
 }
 
-.experience__detail i {
+.experience__detail__body i {
   font-size: 12px;
 }
 
-.experience__detail p {
+.experience__detail__body p {
   text-align: start;
+}
+
+.experience__detail__body li {
+  text-align: start;
+  padding-left: 24px;
+  line-height: 24px;
+  font-weight: var(--font-regular);
 }
 
 /* Projects */
@@ -323,6 +330,7 @@ p {
   font-size: var(--font-regular);
   padding: 8px 48px;
   color: var(--color-grey);
+  position: relative;
 }
 
 .category__btn.selected,
@@ -345,9 +353,9 @@ p {
   height: 24px;
   line-height: 24px;
   display: inline-block;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
@@ -436,7 +444,6 @@ p {
 #testimonials {
   background-color: var(--color-pink);
   margin-top: 40px;
-  margin-top: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -445,7 +452,8 @@ p {
 .testimonial {
   background-color: #fff3ea;
   border-radius: var(--size-border-radius);
-  margin-bottom: 40px;
+  margin: 24px 16px;
+  padding: 16px;
 }
 
 .testimonial_detail {
@@ -523,6 +531,15 @@ p {
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
+  :root {
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
   .navbar__toggle-btn {
     display: block;
   }
@@ -530,7 +547,7 @@ p {
   #navbar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 0;
+    padding-bottom: 10px;
   }
 
   #navbar.navbar--dark {
@@ -559,6 +576,11 @@ p {
     text-align: center;
   }
 
+  .section {
+    padding: 16px;
+    padding-top: 50px;
+  }
+
   #logo {
     width: 60%;
     margin-top: 12px;
@@ -568,6 +590,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 20px;
   }
 
   .about__avatar {
@@ -581,6 +604,10 @@ p {
 
   .skill {
     margin-bottom: 38px;
+  }
+
+  #experience {
+    margin: 0;
   }
 
   .experience__detail {
@@ -610,14 +637,42 @@ p {
     align-self: flex-start;
   }
 
-  .project {
-    flex-grow: 1;
+  #projects {
+    padding: 0 16px;
+    margin: 20px 0;
   }
 
   .project__categories {
-    margin: 40px 0;
-    padding: 0 40px;
+    margin: 16px 0;
+    padding: 0;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .category__count {
+    right: 4px;
+  }
+
+  .category__btn {
+    padding: 8px 0;
+    width: 40%;
+  }
+
+  .project {
+    flex-grow: 1;
+    margin: 10px 16px;
+  }
+
+  #testimonials {
+    margin-top: 60px;
+    padding-top: 24px;
+  }
+
+  .arrow-up {
+    bottom: 16px;
+    right: 16px;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
   }
 }
