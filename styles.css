@@ -123,7 +123,7 @@ p {
   z-index: 1;
 }
 
-#navbar.navbar--dark {
+#navbar.navbar__dark {
   background-color: var(--color-grey-blue);
 }
 
@@ -140,15 +140,14 @@ p {
   padding: 8px 12px;
   margin: 0 4px;
   cursor: pointer;
+  border: 1px solid transparent;
   border-radius: var(--size-border-radius);
   font-weight: var(--weight-semi-bold);
 }
 
-.navbar__menu__item.active {
-  border: 1px solid var(--color-dark-pink);
-}
-
 .navbar__menu__item:hover {
+  border-color: var(--color-pink);
+  border-radius: var(--size-border-radius);
   background-color: var(--color-dark-pink);
 }
 
@@ -166,7 +165,7 @@ p {
   background: url('imgs/home_bg.png') center/cover no-repeat;
 }
 
-.home {
+.home__container {
   padding: 20%;
 }
 
@@ -281,7 +280,7 @@ p {
 .experience__detail__header {
   background-color: var(--color-dark-pink);
   border-radius: var(--size-border-radius);
-  padding: 20px;
+  padding: 10px;
   flex-basis: 30%;
 }
 
@@ -326,13 +325,13 @@ p {
   color: var(--color-grey);
 }
 
-.category__btn.active,
+.category__btn.selected,
 .category__btn:hover {
   background-color: var(--color-dark-pink);
   color: var(--color-dark-white);
 }
 
-.category__btn.active .category__count,
+.category__btn.selected .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
   top: 0;
@@ -356,8 +355,15 @@ p {
 .projects {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  opacity: 1;
+  transition: all var(--animation-duration) ease-out;
+}
+
+.projects.anim-out {
+  opacity: 0;
+  transform: scale(0.96) translateY(40px);
 }
 
 .project {
@@ -367,9 +373,13 @@ p {
   align-items: center;
   width: 300px;
   height: 300px;
-  margin-bottom: 24px;
+  margin: 24px 16px;
   background-color: var(--color-dark-white);
   border-radius: var(--size-border-radius);
+}
+
+.project.invisible {
+  display: none;
 }
 
 .project__img {
@@ -378,7 +388,13 @@ p {
 }
 
 .project__description h3 {
+  color: var(--color-dark-pink);
+  font-weight: var(--weight-semi-bold);
+}
+
+.project__description p {
   color: var(--color-white);
+  font-size: var(--font-micro);
 }
 
 .project__description h3::after {
@@ -386,11 +402,11 @@ p {
   display: block;
   position: relative;
   left: 50%;
-  width: 25px;
+  width: 50px;
   height: 2px;
-  margin-left: -12px;
+  transform: translateX(-50%);
   margin-top: 8px;
-  background-color: var(--color-white);
+  background-color: var(--color-pink);
   border-radius: var(--size-border-radius);
 }
 
@@ -408,6 +424,7 @@ p {
   transition: all var(--animation-duration) ease-in;
   transform: translateY(10px);
   border-radius: var(--size-border-radius);
+  padding: 0 20px;
 }
 
 .project:hover .project__description {
@@ -482,6 +499,28 @@ p {
   margin-top: 20px;
 }
 
+/* Scroll */
+.arrow-up {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+  color: var(--color-pink);
+  background-color: var(--color-white);
+  border-radius: 50%;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-in;
+}
+
+.arrow-up.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
   .navbar__toggle-btn {
@@ -496,6 +535,7 @@ p {
 
   #navbar.navbar--dark {
     padding-bottom: 16px;
+    background-color: 'transparent';
   }
 
   .navbar__menu {
@@ -509,6 +549,10 @@ p {
 
   .navbar__menu.open {
     display: block;
+  }
+
+  #navbar.open {
+    background-color: var(--color-grey-blue);
   }
 
   .navbar__logo {
@@ -548,6 +592,7 @@ p {
   .experience__detail__header {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 12px;
     width: 100%;
   }
 
@@ -559,6 +604,10 @@ p {
   .experience__detail__body p {
     font-size: var(--font-small);
     line-height: 24px;
+  }
+
+  .experience__detail__body {
+    align-self: flex-start;
   }
 
   .project {

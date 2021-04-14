@@ -27,7 +27,7 @@
         </a>
       </div>
       <ul class="navbar__menu">
-        <li class="navbar__menu__item active" data-link="#home">Home</li>
+        <li class="navbar__menu__item" data-link="#home">Home</li>
         <li class="navbar__menu__item" data-link="#about">About</li>
         <li class="navbar__menu__item" data-link="#skills">Skills</li>
         <li class="navbar__menu__item" data-link="#experience">Experience</li>
@@ -41,7 +41,7 @@
     </nav>
     <!-- Home -->
     <section id="home">
-      <div class="home"></div>
+      <div class="home__container"></div>
     </section>
     <!-- About Me -->
     <section id="about" class="section section__container">
@@ -72,8 +72,9 @@
           <ul class="skill__items">
             <li class="skill__item">TypeScript</li>
             <li class="skill__item">JavaScript</li>
-            <li class="skill__item">React JS</li>
             <li class="skill__item">Web APIs</li>
+            <li class="skill__item">React JS</li>
+            <li class="skill__item">Redux</li>
           </ul>
         </div>
         <div class="skill">
@@ -165,21 +166,21 @@
       <div class="section__container">
         <h1 id="project__title">Projects</h1>
         <div class="project__categories">
-          <button class="category__btn active">
+          <button class="category__btn selected" data-filter="*">
             All
-            <span class="category__count">6</span>
+            <span class="category__count">3</span>
           </button>
-          <button class="category__btn">
+          <button class="category__btn" data-filter="front-end">
             Front-end
-            <span class="category__count">2</span>
+            <span class="category__count">1</span>
           </button>
-          <button class="category__btn">
+          <button class="category__btn" data-filter="back-end">
             Back-end
-            <span class="category__count">2</span>
+            <span class="category__count">1</span>
           </button>
-          <button class="category__btn">
+          <button class="category__btn" data-filter="mobile">
             Mobile
-            <span class="category__count">2</span>
+            <span class="category__count">1</span>
           </button>
         </div>
         <div class="projects">
@@ -187,6 +188,7 @@
             href="https://github.com/jieunkang-101/koviseries"
             class="project"
             target="blank"
+            data-type="mobile"
           >
             <img
               src="imgs/projects/koviseries.png"
@@ -195,28 +197,52 @@
             />
             <div class="project__description">
               <h3>koviseries</h3>
-              <span>A mobile application with React Native and Expo</span>
+              <p>
+                A mobile application that recommends Korean movies and TV shows.
+                <br />
+                Built with React Native, expo, and AJAX
+              </p>
             </div>
           </a>
-          <a href="" class="project" target="blank">
-            <img src="" alt="" class="project__img" />
+          <a
+            href="https://github.com/jieunkang-101/TapRoom-Redux"
+            class="project"
+            target="blank"
+            data-type="front-end"
+          >
+            <img
+              src="imgs/projects/taproom.png"
+              alt="taproom"
+              class="project__img"
+            />
             <div class="project__description">
-              <h3>title</h3>
-              <span>description</span>
+              <h3>Tap Room</h3>
+              <p>
+                A React application where a tap room can track their kegs. This
+                website has full CRUD funcionality to tap room. <br />Built with
+                ReactJs, Redux, npm, Webpack, and bootstrap
+              </p>
             </div>
           </a>
-          <a href="" class="project" target="blank">
-            <img src="" alt="" class="project__img" />
+          <a
+            href="https://github.com/jieunkang-101/ParksLookup.Solution"
+            class="project"
+            target="blank"
+            data-type="back-end"
+          >
+            <img
+              src="imgs/projects/park_api.png"
+              alt="park_api"
+              class="project__img"
+            />
             <div class="project__description">
-              <h3>title</h3>
-              <span>description</span>
-            </div>
-          </a>
-          <a href="" class="project" target="blank">
-            <img src="" alt="" class="project__img" />
-            <div class="project__description">
-              <h3>title</h3>
-              <span>description</span>
+              <h3>Parks Lookup</h3>
+              <p>
+                An API that allows users to GET, POST, PUT and DELETE for state
+                and national parks of the United States.<br />
+                Built with C#, .NET, ASP.NET Core MVC 2.2, MySQL, and Entity
+                Framework Core
+              </p>
             </div>
           </a>
         </div>
@@ -297,5 +323,9 @@
       </div>
       <p id="contact__rights">&copy; 2021 Jieun Kang</p>
     </section>
+    <!-- Arrow up -->
+    <button class="arrow-up">
+      <i class="fas fa-arrow-circle-up"></i>
+    </button>
   </body>
 </html>
