@@ -79,7 +79,7 @@ categoryBtnContainer.addEventListener('click', (e) => {
 
   projectContainer.classList.add('anim-out');
   setTimeout(() => {
-    projects.forEach((project) => {
+    projects.forEach((project, index) => {
       if (filter === '*' || filter === project.dataset.type) {
         project.classList.remove('invisible');
       } else {
@@ -89,11 +89,6 @@ categoryBtnContainer.addEventListener('click', (e) => {
     projectContainer.classList.remove('anim-out');
   }, 300);
 });
-
-function scrollIntoView(selector) {
-  const scrollTo = document.querySelector(selector);
-  scrollTo.scrollIntoView({ behavior: 'smooth' });
-}
 
 // section observer
 const sectionIds = [
@@ -108,7 +103,6 @@ const sections = sectionIds.map(id => document.querySelector(id));
 const navItems = sectionIds.map(id =>
   document.querySelector(`[data-link="${id}"]`)
   );
-  console.log(navItems)
 
 let selectedNavIndex = 0;
 let selectedNavItem = navItems[0];
@@ -118,12 +112,18 @@ function selectNavItem(selected) {
   selectedNavItem.classList.add('active');
 }
 
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: 'smooth' });
+  selectedNavItem(navItems[sectionIds.indexOf(selector)]);
+}
+
 const observerOptions = {
   root: null,
   rootMargin: '0px',
   threshold: 0.3,
 };
-console.log(selectedNavIndex)
+
 const observerCallback = (entries, observer) => {
   entries.forEach(entry => {
     if (!entry.isIntersecting && entry.intersectionRatio > 0) {
