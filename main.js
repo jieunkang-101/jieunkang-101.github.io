@@ -100,14 +100,15 @@ const sectionIds = [
   '#home',
   '#about',
   '#skills',
-  '#work',
-  '#testimonials',
+  '#experience',
+  '#projects',
   '#contact',
 ];
 const sections = sectionIds.map(id => document.querySelector(id));
 const navItems = sectionIds.map(id =>
   document.querySelector(`[data-link="${id}"]`)
-);
+  );
+  console.log(navItems)
 
 let selectedNavIndex = 0;
 let selectedNavItem = navItems[0];
@@ -122,7 +123,7 @@ const observerOptions = {
   rootMargin: '0px',
   threshold: 0.3,
 };
-
+console.log(selectedNavIndex)
 const observerCallback = (entries, observer) => {
   entries.forEach(entry => {
     if (!entry.isIntersecting && entry.intersectionRatio > 0) {
@@ -138,3 +139,12 @@ const observerCallback = (entries, observer) => {
 
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 sections.forEach(section => observer.observe(section));
+
+window.addEventListener('scroll', () => {
+  if(window.scrollY === 0) {
+    selectedNavIndex = 0;
+  } else if (window.scrollY + window.innerHeight === document.body.clientHeight) {
+    selectedNavIndex = 5;
+  }
+  selectNavItem(navItems[selectedNavIndex]);
+})
