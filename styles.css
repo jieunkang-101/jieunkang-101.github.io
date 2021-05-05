@@ -153,7 +153,7 @@ p {
   background-color: var(--color-dark-pink);
 }
 
-.navbar__toggle-btn {
+.navbar__toggle__btn {
   position: absolute;
   top: 16px;
   right: 16px;
@@ -511,7 +511,7 @@ p {
 }
 
 /* Scroll */
-.arrow-up {
+.arrow__up {
   position: fixed;
   bottom: 50px;
   right: 50px;
@@ -527,7 +527,7 @@ p {
   transition: opacity 300ms ease-in;
 }
 
-.arrow-up.visible {
+.arrow__up.visible {
   opacity: 1;
   pointer-events: auto;
 }
@@ -543,7 +543,7 @@ p {
     --font-micro: 12px;
   }
 
-  .navbar__toggle-btn {
+  .navbar__toggle__btn {
     display: block;
   }
 
@@ -673,7 +673,7 @@ p {
     padding-top: 24px;
   }
 
-  .arrow-up {
+  .arrow__up {
     bottom: 36px;
     right: 16px;
     width: 36px;

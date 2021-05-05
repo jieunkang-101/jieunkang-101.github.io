@@ -25,7 +25,7 @@ navbarMenu.addEventListener('click', (event) => {
 });
 
 // Navbar toggle button for small screen
-const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+const navbarToggleBtn = document.querySelector('.navbar__toggle__btn');
 navbarToggleBtn.addEventListener('click', () => {
   navbarMenu.classList.toggle('open');
   navbar.classList.toggle('open');
@@ -45,7 +45,7 @@ document.addEventListener('scroll', () => {
 });
 
 // Show "arrow up" button when scrolling down
-const arrowUp = document.querySelector('.arrow-up');
+const arrowUp = document.querySelector('.arrow__up');
 document.addEventListener('scroll', () => {
   if (window.scrollY > homeHeight / 2) {
     arrowUp.classList.add('visible');
@@ -74,7 +74,8 @@ categoryBtnContainer.addEventListener('click', (e) => {
     active.classList.remove('selected');
   }
 
-  const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+  const target =
+    e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
   target.classList.add('selected');
 
   projectContainer.classList.add('anim-out');
@@ -99,10 +100,10 @@ const sectionIds = [
   '#projects',
   '#contact',
 ];
-const sections = sectionIds.map(id => document.querySelector(id));
-const navItems = sectionIds.map(id =>
+const sections = sectionIds.map((id) => document.querySelector(id));
+const navItems = sectionIds.map((id) =>
   document.querySelector(`[data-link="${id}"]`)
-  );
+);
 
 let selectedNavIndex = 0;
 let selectedNavItem = navItems[0];
@@ -115,7 +116,7 @@ function selectNavItem(selected) {
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: 'smooth' });
-  selectedNavItem(navItems[sectionIds.indexOf(selector)]);
+  selectedNavItem = navItems[sectionIds.indexOf(selector)];
 }
 
 const observerOptions = {
@@ -125,7 +126,7 @@ const observerOptions = {
 };
 
 const observerCallback = (entries, observer) => {
-  entries.forEach(entry => {
+  entries.forEach((entry) => {
     if (!entry.isIntersecting && entry.intersectionRatio > 0) {
       const index = sectionIds.indexOf(`#${entry.target.id}`);
       if (entry.boundingClientRect.y < 0) {
@@ -138,13 +139,16 @@ const observerCallback = (entries, observer) => {
 };
 
 const observer = new IntersectionObserver(observerCallback, observerOptions);
-sections.forEach(section => observer.observe(section));
+sections.forEach((section) => observer.observe(section));
 
 window.addEventListener('scroll', () => {
-  if(window.scrollY === 0) {
+  if (window.scrollY === 0) {
     selectedNavIndex = 0;
-  } else if (window.scrollY + window.innerHeight === document.body.clientHeight) {
+  } else if (
+    window.scrollY + window.innerHeight ===
+    document.body.clientHeight
+  ) {
     selectedNavIndex = 5;
   }
   selectNavItem(navItems[selectedNavIndex]);
-})
+});
